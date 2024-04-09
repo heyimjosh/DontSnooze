@@ -38,7 +38,11 @@ struct ContentView: View {
       } else {
         Text(connectionDirections)
         Button(action: {
-          niManager.initializeEverything()
+          if niManager.session == nil {
+            niManager.initializeEverything()
+          } else {
+            niManager.restartNISession()
+          }
         }, label: {
           Text("Tap here to initialize")
         })

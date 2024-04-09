@@ -22,7 +22,9 @@ class NearbyInteractionManager: NSObject, ObservableObject {
     return distance != nil
   }
   
-  private var session: NISession?
+  @Published var session: NISession?
+  
+  var lastUpdateTime: Date?
   
   override init() {
 //    super.init()
@@ -49,10 +51,10 @@ class NearbyInteractionManager: NSObject, ObservableObject {
   }
   
   private func initializeNISession() {
-    os_log("initializing the NISession")
-    session = NISession()
-    session?.delegate = self
-    session?.delegateQueue = DispatchQueue.main
+      os_log("initializing the NISession")
+      session = NISession()
+      session?.delegate = self
+      session?.delegateQueue = DispatchQueue.main
   }
   
   private func deinitializeNISession() {
@@ -62,11 +64,12 @@ class NearbyInteractionManager: NSObject, ObservableObject {
     didSendDiscoveryToken = false
   }
   
-  private func restartNISession() {
+  func restartNISession() {
     os_log("restarting the NISession")
     if let config = session?.configuration {
       session?.run(config)
     }
+    print("Restarting session, is it nil? \(self.session == nil)")
   }
   
   /// Send the local discovery token to the paired device
@@ -139,23 +142,40 @@ extension NearbyInteractionManager: NISessionDelegate {
   
   func session(_ session: NISession, didUpdate nearbyObjects: [NINearbyObject]) {
     if let object = nearbyObjects.first, let distance = object.distance {
-      let newDistance = Measurement(value: Double(distance), unit: UnitLength.meters)
+      let scale: Double = 10.0 // Use 10 for 1 decimal place, 100 for 2 decimal places, etc.
+      // Round the distance up to 1 decimal place
+      let roundedDistance = ceil(Double(distance) * scale) / scale
+      let newDistance = Measurement(value: roundedDistance, unit: UnitLength.meters)
       if newDistance != self.distance {
-        print("HERE")
+        
+        if let lastUpdate = self.lastUpdateTime, Date().timeIntervalSince(lastUpdate) < 1 {
+          // Less than 1 second has passed; do not update
+          os_log("Returning because less than 1 second has passed")
+          return
+        }
+        
+        // MARK: be careful with this... if someone is right on the edge and they try to move in, it will just ignore the update entirely
+        let tolerance = 0.1
+        if abs(newDistance.value - (self.distance?.value ?? 0.0)) < tolerance {
+          os_log("Returning because the distance update isn't within tolerance, not meaningful")
+          return
+        }
+        
+#if os(watchOS)
+        // TODO: Donny Wals image loader article to intercept and use an existing Task here
         Task {
           do {
-            try await updateWatchWithDistance(newDistance)
-            // Update self.distance after the watch has been successfully notified.
             DispatchQueue.main.async {
               self.distance = newDistance
+              self.lastUpdateTime = Date()
             }
+            try await updateWatchWithDistance(newDistance)
             os_log("Distance updated successfully")
           } catch {
             os_log("Failed to update watch with distance: %@", log: .default, type: .error, error.localizedDescription)
           }
         }
-      } else {
-        //print("distance didn't change, don't update anything")
+#endif
       }
     }
   }
