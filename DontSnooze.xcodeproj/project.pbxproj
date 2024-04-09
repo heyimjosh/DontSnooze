@@ -57,6 +57,8 @@
 		244D50AA2BC4D728003E5CBA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		244D50B42BC4D984003E5CBA /* NearbyInteractionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyInteractionManager.swift; sourceTree = "<group>"; };
 		244D50B72BC4D9FA003E5CBA /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		244D50BA2BC5D41D003E5CBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		244D50BB2BC5D429003E5CBA /* DontSnoozeWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DontSnoozeWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		244D50762BC4D17B003E5CBA /* DontSnooze */ = {
 			isa = PBXGroup;
 			children = (
+				244D50BA2BC5D41D003E5CBA /* Info.plist */,
 				244D50772BC4D17B003E5CBA /* DontSnoozeApp.swift */,
 				244D50792BC4D17B003E5CBA /* ContentView.swift */,
 				244D50B42BC4D984003E5CBA /* NearbyInteractionManager.swift */,
@@ -119,6 +122,7 @@
 		244D50A22BC4D727003E5CBA /* DontSnoozeWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				244D50BB2BC5D429003E5CBA /* DontSnoozeWatch-Watch-App-Info.plist */,
 				244D50A72BC4D728003E5CBA /* Assets.xcassets */,
 				244D50A92BC4D728003E5CBA /* Preview Content */,
 			);
@@ -395,6 +399,7 @@
 				DEVELOPMENT_TEAM = 3ZSY9E5XKM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DontSnooze/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -425,6 +430,7 @@
 				DEVELOPMENT_TEAM = 3ZSY9E5XKM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DontSnooze/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -454,6 +460,7 @@
 				DEVELOPMENT_TEAM = 3ZSY9E5XKM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DontSnoozeWatch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = DontSnoozeWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.joshdavis.DontSnooze;
@@ -484,6 +491,7 @@
 				DEVELOPMENT_TEAM = 3ZSY9E5XKM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DontSnoozeWatch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = DontSnoozeWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.joshdavis.DontSnooze;
