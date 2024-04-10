@@ -20,6 +20,8 @@
 		244D50B62BC4D984003E5CBA /* NearbyInteractionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50B42BC4D984003E5CBA /* NearbyInteractionManager.swift */; };
 		244D50B82BC4D9FA003E5CBA /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50B72BC4D9FA003E5CBA /* Helper.swift */; };
 		244D50B92BC4D9FA003E5CBA /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50B72BC4D9FA003E5CBA /* Helper.swift */; };
+		244D50BD2BC61BC8003E5CBA /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50BC2BC61BC8003E5CBA /* BluetoothManager.swift */; };
+		244D50BE2BC61BC8003E5CBA /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50BC2BC61BC8003E5CBA /* BluetoothManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,7 @@
 		244D50B72BC4D9FA003E5CBA /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		244D50BA2BC5D41D003E5CBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		244D50BB2BC5D429003E5CBA /* DontSnoozeWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DontSnoozeWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		244D50BC2BC61BC8003E5CBA /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,7 @@
 				244D50772BC4D17B003E5CBA /* DontSnoozeApp.swift */,
 				244D50792BC4D17B003E5CBA /* ContentView.swift */,
 				244D50B42BC4D984003E5CBA /* NearbyInteractionManager.swift */,
+				244D50BC2BC61BC8003E5CBA /* BluetoothManager.swift */,
 				244D507B2BC4D17C003E5CBA /* Assets.xcassets */,
 				244D507D2BC4D17C003E5CBA /* Preview Content */,
 				244D50B72BC4D9FA003E5CBA /* Helper.swift */,
@@ -243,6 +247,7 @@
 				244D50B52BC4D984003E5CBA /* NearbyInteractionManager.swift in Sources */,
 				244D50782BC4D17B003E5CBA /* DontSnoozeApp.swift in Sources */,
 				244D50B82BC4D9FA003E5CBA /* Helper.swift in Sources */,
+				244D50BD2BC61BC8003E5CBA /* BluetoothManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +259,7 @@
 				244D50B62BC4D984003E5CBA /* NearbyInteractionManager.swift in Sources */,
 				244D50B22BC4D94D003E5CBA /* ContentView.swift in Sources */,
 				244D50B92BC4D9FA003E5CBA /* Helper.swift in Sources */,
+				244D50BE2BC61BC8003E5CBA /* BluetoothManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
