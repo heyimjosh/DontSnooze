@@ -27,7 +27,21 @@ extension UserNotificationClient: DependencyKey {
     },
     requestAuthorization: {
       try await UNUserNotificationCenter.current().requestAuthorization(options: $0)
+    },
+    getPendingNotificationRequests: {
+      return await withCheckedContinuation { continuation in
+        UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
+          continuation.resume(returning: requests)
+        }
+      }
+    },
+    removeAllDeliveredNotifications: {
+      UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+    },
+    removeAllPendingNotifications: {
+      UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
+    
   )
 }
 
@@ -53,11 +67,11 @@ extension UserNotificationClient.Notification.Settings {
 extension UserNotificationClient {
   fileprivate class Delegate: NSObject, UNUserNotificationCenterDelegate {
     let continuation: AsyncStream<UserNotificationClient.DelegateEvent>.Continuation
-
+    
     init(continuation: AsyncStream<UserNotificationClient.DelegateEvent>.Continuation) {
       self.continuation = continuation
     }
-
+    
     func userNotificationCenter(
       _ center: UNUserNotificationCenter,
       didReceive response: UNNotificationResponse,
@@ -67,7 +81,7 @@ extension UserNotificationClient {
         .didReceiveResponse(.init(rawValue: response)) { completionHandler() }
       )
     }
-
+    
     func userNotificationCenter(
       _ center: UNUserNotificationCenter,
       openSettingsFor notification: UNNotification?
@@ -76,12 +90,12 @@ extension UserNotificationClient {
         .openSettingsForNotification(notification.map(Notification.init(rawValue:)))
       )
     }
-
+    
     func userNotificationCenter(
       _ center: UNUserNotificationCenter,
       willPresent notification: UNNotification,
       withCompletionHandler completionHandler:
-        @escaping (UNNotificationPresentationOptions) -> Void
+      @escaping (UNNotificationPresentationOptions) -> Void
     ) {
       self.continuation.yield(
         .willPresentNotification(.init(rawValue: notification)) { completionHandler($0) }

@@ -19,6 +19,10 @@ extension UserNotificationClient {
     getNotificationSettings: { Notification.Settings(authorizationStatus: .notDetermined) },
     removeDeliveredNotificationsWithIdentifiers: { _ in },
     removePendingNotificationRequestsWithIdentifiers: { _ in },
-    requestAuthorization: { _ in false }
+    requestAuthorization: { _ in false },
+    getPendingNotificationRequests: {[]},
+    removeAllDeliveredNotifications: {},
+    removeAllPendingNotifications: {}
+    
   )
 }
