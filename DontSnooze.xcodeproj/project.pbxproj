@@ -28,6 +28,9 @@
 		244D50C82BC78800003E5CBA /* LiveKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50C72BC78800003E5CBA /* LiveKey.swift */; };
 		244D50CA2BC78836003E5CBA /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50C92BC78836003E5CBA /* Sounds.swift */; };
 		244D50CC2BC7884F003E5CBA /* TestKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50CB2BC7884F003E5CBA /* TestKey.swift */; };
+		244D50CF2BC78938003E5CBA /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50CE2BC78938003E5CBA /* Interface.swift */; };
+		244D50D12BC78952003E5CBA /* LiveKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50D02BC78952003E5CBA /* LiveKey.swift */; };
+		244D50D32BC7898B003E5CBA /* TestKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50D22BC7898B003E5CBA /* TestKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 		244D50C72BC78800003E5CBA /* LiveKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveKey.swift; sourceTree = "<group>"; };
 		244D50C92BC78836003E5CBA /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 		244D50CB2BC7884F003E5CBA /* TestKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKey.swift; sourceTree = "<group>"; };
+		244D50CE2BC78938003E5CBA /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
+		244D50D02BC78952003E5CBA /* LiveKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveKey.swift; sourceTree = "<group>"; };
+		244D50D22BC7898B003E5CBA /* TestKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,9 @@
 		244D50CD2BC788F1003E5CBA /* LocalNotifications */ = {
 			isa = PBXGroup;
 			children = (
+				244D50CE2BC78938003E5CBA /* Interface.swift */,
+				244D50D02BC78952003E5CBA /* LiveKey.swift */,
+				244D50D22BC7898B003E5CBA /* TestKey.swift */,
 			);
 			path = LocalNotifications;
 			sourceTree = "<group>";
@@ -285,14 +294,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				244D507A2BC4D17B003E5CBA /* ContentView.swift in Sources */,
+				244D50CF2BC78938003E5CBA /* Interface.swift in Sources */,
 				244D50B52BC4D984003E5CBA /* NearbyInteractionManager.swift in Sources */,
 				244D50CC2BC7884F003E5CBA /* TestKey.swift in Sources */,
 				244D50C22BC786AD003E5CBA /* Client.swift in Sources */,
+				244D50D32BC7898B003E5CBA /* TestKey.swift in Sources */,
 				244D50CA2BC78836003E5CBA /* Sounds.swift in Sources */,
 				244D50C82BC78800003E5CBA /* LiveKey.swift in Sources */,
 				244D50782BC4D17B003E5CBA /* DontSnoozeApp.swift in Sources */,
 				244D50B82BC4D9FA003E5CBA /* Helper.swift in Sources */,
 				244D50BD2BC61BC8003E5CBA /* BluetoothManager.swift in Sources */,
+				244D50D12BC78952003E5CBA /* LiveKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
