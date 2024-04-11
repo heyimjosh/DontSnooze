@@ -31,6 +31,7 @@
 		244D50CF2BC78938003E5CBA /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50CE2BC78938003E5CBA /* Interface.swift */; };
 		244D50D12BC78952003E5CBA /* LiveKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50D02BC78952003E5CBA /* LiveKey.swift */; };
 		244D50D32BC7898B003E5CBA /* TestKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50D22BC7898B003E5CBA /* TestKey.swift */; };
+		244D50D52BC78BAD003E5CBA /* god-monkey.wav in Resources */ = {isa = PBXBuildFile; fileRef = 244D50D42BC78BAD003E5CBA /* god-monkey.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		244D50CE2BC78938003E5CBA /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
 		244D50D02BC78952003E5CBA /* LiveKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveKey.swift; sourceTree = "<group>"; };
 		244D50D22BC7898B003E5CBA /* TestKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKey.swift; sourceTree = "<group>"; };
+		244D50D42BC78BAD003E5CBA /* god-monkey.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "god-monkey.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		244D506B2BC4D17B003E5CBA = {
 			isa = PBXGroup;
 			children = (
+				244D50D42BC78BAD003E5CBA /* god-monkey.wav */,
 				244D50762BC4D17B003E5CBA /* DontSnooze */,
 				244D50A22BC4D727003E5CBA /* DontSnoozeWatch Watch App */,
 				244D50752BC4D17B003E5CBA /* Products */,
@@ -274,6 +277,7 @@
 			files = (
 				244D507F2BC4D17C003E5CBA /* Preview Assets.xcassets in Resources */,
 				244D507C2BC4D17C003E5CBA /* Assets.xcassets in Resources */,
+				244D50D52BC78BAD003E5CBA /* god-monkey.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
