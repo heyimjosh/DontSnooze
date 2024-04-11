@@ -22,6 +22,12 @@
 		244D50B92BC4D9FA003E5CBA /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50B72BC4D9FA003E5CBA /* Helper.swift */; };
 		244D50BD2BC61BC8003E5CBA /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50BC2BC61BC8003E5CBA /* BluetoothManager.swift */; };
 		244D50BE2BC61BC8003E5CBA /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50BC2BC61BC8003E5CBA /* BluetoothManager.swift */; };
+		244D50C22BC786AD003E5CBA /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50C12BC786AD003E5CBA /* Client.swift */; };
+		244D50C42BC78785003E5CBA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 244D50C32BC78785003E5CBA /* ComposableArchitecture */; };
+		244D50C62BC78797003E5CBA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 244D50C52BC78797003E5CBA /* ComposableArchitecture */; };
+		244D50C82BC78800003E5CBA /* LiveKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50C72BC78800003E5CBA /* LiveKey.swift */; };
+		244D50CA2BC78836003E5CBA /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50C92BC78836003E5CBA /* Sounds.swift */; };
+		244D50CC2BC7884F003E5CBA /* TestKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50CB2BC7884F003E5CBA /* TestKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +68,10 @@
 		244D50BA2BC5D41D003E5CBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		244D50BB2BC5D429003E5CBA /* DontSnoozeWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DontSnoozeWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		244D50BC2BC61BC8003E5CBA /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		244D50C12BC786AD003E5CBA /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		244D50C72BC78800003E5CBA /* LiveKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveKey.swift; sourceTree = "<group>"; };
+		244D50C92BC78836003E5CBA /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
+		244D50CB2BC7884F003E5CBA /* TestKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				244D50C42BC78785003E5CBA /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				244D50C62BC78797003E5CBA /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +115,8 @@
 		244D50762BC4D17B003E5CBA /* DontSnooze */ = {
 			isa = PBXGroup;
 			children = (
+				244D50CD2BC788F1003E5CBA /* LocalNotifications */,
+				244D50C02BC78680003E5CBA /* AudioPlayerClient */,
 				244D50BA2BC5D41D003E5CBA /* Info.plist */,
 				244D50772BC4D17B003E5CBA /* DontSnoozeApp.swift */,
 				244D50792BC4D17B003E5CBA /* ContentView.swift */,
@@ -141,6 +155,24 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		244D50C02BC78680003E5CBA /* AudioPlayerClient */ = {
+			isa = PBXGroup;
+			children = (
+				244D50C12BC786AD003E5CBA /* Client.swift */,
+				244D50C72BC78800003E5CBA /* LiveKey.swift */,
+				244D50C92BC78836003E5CBA /* Sounds.swift */,
+				244D50CB2BC7884F003E5CBA /* TestKey.swift */,
+			);
+			path = AudioPlayerClient;
+			sourceTree = "<group>";
+		};
+		244D50CD2BC788F1003E5CBA /* LocalNotifications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalNotifications;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,6 +191,9 @@
 				244D50AD2BC4D728003E5CBA /* PBXTargetDependency */,
 			);
 			name = DontSnooze;
+			packageProductDependencies = (
+				244D50C32BC78785003E5CBA /* ComposableArchitecture */,
+			);
 			productName = DontSnooze;
 			productReference = 244D50742BC4D17B003E5CBA /* DontSnooze.app */;
 			productType = "com.apple.product-type.application";
@@ -176,6 +211,9 @@
 			dependencies = (
 			);
 			name = "DontSnoozeWatch Watch App";
+			packageProductDependencies = (
+				244D50C52BC78797003E5CBA /* ComposableArchitecture */,
+			);
 			productName = "DontSnoozeWatch Watch App";
 			productReference = 244D50A12BC4D727003E5CBA /* DontSnoozeWatch Watch App.app */;
 			productType = "com.apple.product-type.application";
@@ -207,6 +245,9 @@
 				Base,
 			);
 			mainGroup = 244D506B2BC4D17B003E5CBA;
+			packageReferences = (
+				244D50BF2BC78676003E5CBA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 244D50752BC4D17B003E5CBA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -245,6 +286,10 @@
 			files = (
 				244D507A2BC4D17B003E5CBA /* ContentView.swift in Sources */,
 				244D50B52BC4D984003E5CBA /* NearbyInteractionManager.swift in Sources */,
+				244D50CC2BC7884F003E5CBA /* TestKey.swift in Sources */,
+				244D50C22BC786AD003E5CBA /* Client.swift in Sources */,
+				244D50CA2BC78836003E5CBA /* Sounds.swift in Sources */,
+				244D50C82BC78800003E5CBA /* LiveKey.swift in Sources */,
 				244D50782BC4D17B003E5CBA /* DontSnoozeApp.swift in Sources */,
 				244D50B82BC4D9FA003E5CBA /* Helper.swift in Sources */,
 				244D50BD2BC61BC8003E5CBA /* BluetoothManager.swift in Sources */,
@@ -548,6 +593,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		244D50BF2BC78676003E5CBA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		244D50C32BC78785003E5CBA /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 244D50BF2BC78676003E5CBA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		244D50C52BC78797003E5CBA /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 244D50BF2BC78676003E5CBA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 244D506C2BC4D17B003E5CBA /* Project object */;
 }
