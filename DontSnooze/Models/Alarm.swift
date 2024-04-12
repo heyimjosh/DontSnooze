@@ -16,3 +16,8 @@ struct Alarm: Equatable, Identifiable, Hashable, Codable {
     case sunday = 1, monday, tuesday, wednesday, thursday, friday, saturday
   }
 }
+
+extension Alarm {
+  static let mock = Self(id: UUID())
+  static let mock2 = Self(id: UUID())
+}

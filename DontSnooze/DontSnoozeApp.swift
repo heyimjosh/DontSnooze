@@ -21,7 +21,7 @@
 ////            ContentView()
 ////        }
 ////    }
-//  
+//
 //  init() {
 //    /// NearbyInteraction is only supported on devices with a U1 chip.
 //    var isSupported: Bool
@@ -35,9 +35,9 @@
 //      self.isSupported = true
 //    }
 //  }
-//  
+//
 //  @State var isSupported = false
-//  
+//
 ////  @State var distance: Measurement<UnitLength>? {
 ////    willSet {
 ////      if let oldDistance = distance?.value, let newDistance = newValue?.value {
@@ -48,7 +48,7 @@
 ////      }
 ////    }
 ////  }
-//  
+//
 //  var body: some Scene {
 //    WindowGroup {
 //      Group {
@@ -62,7 +62,7 @@
 //        //}
 //      }
 //      .multilineTextAlignment(.center)
-//      
+//
 //      /// Disable the screen timeout on iOS devices.
 //#if os(iOS)
 //      .onAppear {
@@ -74,7 +74,7 @@
 //#endif
 //    }
 //  }
-//  
+//
 //  func playHaptic() {
 //#if os(watchOS)
 //    WKInterfaceDevice.current().play(.click)
@@ -95,12 +95,9 @@ struct DontSnoozeApp: App {
     AppFeature()
       ._printChanges()
   } withDependencies: {
-//    if ProcessInfo.processInfo.environment["UITesting"] == "true" {
-//      $0.dataManager = .mock()
     $0.dataManager = .liveValue
-//    }
   }
-
+  
   var body: some Scene {
     WindowGroup {
       // NB: This conditional is here only to facilitate UI testing so that we can mock out certain

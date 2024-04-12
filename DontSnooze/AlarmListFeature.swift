@@ -29,6 +29,8 @@ struct AlarmsList {
         self.destination = .alert(.dataFailedToLoad)
       } catch {
       }
+      
+      self.alarms = [.mock, .mock2]
     }
   }
 
@@ -47,7 +49,6 @@ struct AlarmsList {
     Reduce { state, action in
       switch action {
       case .addAlarmButtonTapped:
-        //state.destination = .add(AlarmForm.State(alarm: Alarm(id: self.uui))
         state.destination = .add(AlarmForm.State(alarm: Alarm(id: self.uuid())))
         return .none
 
@@ -99,14 +100,13 @@ struct AlarmsListView: View {
     List {
       ForEach(store.alarms) { alarm in
         NavigationLink(
-          //state: AppFeature.Path.State.detail(SyncUpDetail.State(syncUp: syncUp))
           state: AppFeature.Path.State.form(AlarmForm.State(alarm: alarm))
-          //destination: Text("Hey")
         ) {
-          CardView(alarm: alarm)
-          
+          CardView(alarm: Store(initialState: AlarmForm.State(alarm: alarm)) {
+            AlarmForm()
+          })
         }
-        .listRowBackground(Color.blue)
+        .listRowBackground(Color.white)
         //.listRowBackground(syncUp.theme.mainColor)
       }
       .onDelete { indexSet in
@@ -164,27 +164,27 @@ extension AlertState where Action == AlarmsList.Destination.Alert {
 }
 
 struct CardView: View {
-  let alarm: Alarm
+  @Bindable var store: StoreOf<AlarmForm>
+  
+  func formatDate(_ date: Date) -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "h:mm a"
+    return formatter.string(from: date)
+  }
 
   var body: some View {
-    VStack(alignment: .leading) {
-      Text(self.alarm.title)
-        .font(.headline)
-      Spacer()
-      HStack {
-        //Label("\(self.syncUp.attendees.count)", systemImage: "person.3")
-        Label("\(3)", systemImage: "person.3")
-        Spacer()
-        Label("4", systemImage: "clock")
-        //          .labelStyle(.trailingIcon)
-//        Label(self.syncUp.duration.formatted(.units()), systemImage: "clock")
-//          .labelStyle(.trailingIcon)
+    HStack(spacing: 0) {
+      VStack(alignment: .leading) {
+        Text(formatDate(store.alarm.time))
+          .font(.title)
+        Text(store.alarm.title)
+          .font(.subheadline)
       }
-      .font(.caption)
+      Toggle("", isOn: $store.alarm.isEnabled)
     }
     .padding()
     //.foregroundColor(self.syncUp.theme.accentColor)
-    .foregroundColor(.green)
+    .foregroundColor(.black)
   }
 }
 
@@ -201,21 +201,20 @@ extension LabelStyle where Self == TrailingIconLabelStyle {
   static var trailingIcon: Self { Self() }
 }
 
-//#Preview {
-//  SyncUpsListView(
-//    store: Store(initialState: SyncUpsList.State()) {
-//      SyncUpsList()
-//    } withDependencies: {
-//      $0.dataManager.load = { @Sendable _ in
-//        try JSONEncoder().encode([
-//          SyncUp.mock,
-//          .designMock,
-//          .engineeringMock,
-//        ])
-//      }
-//    }
-//  )
-//}
+#Preview {
+  AlarmsListView(
+    store: Store(initialState: AlarmsList.State()) {
+      AlarmsList()
+    } withDependencies: {
+      $0.dataManager.load = { @Sendable _ in
+        try JSONEncoder().encode([
+          Alarm.mock,
+          .mock2,
+        ])
+      }
+    }
+  )
+}
 
 //#Preview("Load data failure") {
 //  SyncUpsListView(
@@ -230,13 +229,6 @@ extension LabelStyle where Self == TrailingIconLabelStyle {
 //
 //#Preview("Card") {
 //  CardView(
-//    syncUp: SyncUp(
-//      id: SyncUp.ID(),
-//      attendees: [],
-//      duration: .seconds(60),
-//      meetings: [],
-//      theme: .bubblegum,
-//      title: "Point-Free Morning Sync"
-//    )
+//    alarm: Alarm(id: UUID())
 //  )
 //}
