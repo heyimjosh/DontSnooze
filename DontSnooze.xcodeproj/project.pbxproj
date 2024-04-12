@@ -22,16 +22,21 @@
 		244D50B92BC4D9FA003E5CBA /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50B72BC4D9FA003E5CBA /* Helper.swift */; };
 		244D50BD2BC61BC8003E5CBA /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50BC2BC61BC8003E5CBA /* BluetoothManager.swift */; };
 		244D50BE2BC61BC8003E5CBA /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50BC2BC61BC8003E5CBA /* BluetoothManager.swift */; };
-		244D50C22BC786AD003E5CBA /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50C12BC786AD003E5CBA /* Client.swift */; };
+		244D50C22BC786AD003E5CBA /* AudioPlayerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50C12BC786AD003E5CBA /* AudioPlayerClient.swift */; };
 		244D50C42BC78785003E5CBA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 244D50C32BC78785003E5CBA /* ComposableArchitecture */; };
 		244D50C62BC78797003E5CBA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 244D50C52BC78797003E5CBA /* ComposableArchitecture */; };
-		244D50C82BC78800003E5CBA /* LiveKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50C72BC78800003E5CBA /* LiveKey.swift */; };
+		244D50C82BC78800003E5CBA /* AudioPlayerLiveKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50C72BC78800003E5CBA /* AudioPlayerLiveKey.swift */; };
 		244D50CA2BC78836003E5CBA /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50C92BC78836003E5CBA /* Sounds.swift */; };
-		244D50CC2BC7884F003E5CBA /* TestKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50CB2BC7884F003E5CBA /* TestKey.swift */; };
-		244D50CF2BC78938003E5CBA /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50CE2BC78938003E5CBA /* Interface.swift */; };
-		244D50D12BC78952003E5CBA /* LiveKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50D02BC78952003E5CBA /* LiveKey.swift */; };
-		244D50D32BC7898B003E5CBA /* TestKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50D22BC7898B003E5CBA /* TestKey.swift */; };
+		244D50CC2BC7884F003E5CBA /* AudioPlayerTestKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50CB2BC7884F003E5CBA /* AudioPlayerTestKey.swift */; };
+		244D50CF2BC78938003E5CBA /* LocalNotificationsInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50CE2BC78938003E5CBA /* LocalNotificationsInterface.swift */; };
+		244D50D12BC78952003E5CBA /* LocalNotificationsLiveKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50D02BC78952003E5CBA /* LocalNotificationsLiveKey.swift */; };
+		244D50D32BC7898B003E5CBA /* LocalNotificationsTestKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50D22BC7898B003E5CBA /* LocalNotificationsTestKey.swift */; };
 		244D50D52BC78BAD003E5CBA /* god-monkey.wav in Resources */ = {isa = PBXBuildFile; fileRef = 244D50D42BC78BAD003E5CBA /* god-monkey.wav */; };
+		244D50D72BC8A7C7003E5CBA /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50D62BC8A7C7003E5CBA /* AppFeature.swift */; };
+		244D50DA2BC8A9FC003E5CBA /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50D92BC8A9FC003E5CBA /* DataManager.swift */; };
+		244D50DC2BC8AF91003E5CBA /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50DB2BC8AF91003E5CBA /* Alarm.swift */; };
+		244D50DF2BC8B052003E5CBA /* AlarmListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50DE2BC8B052003E5CBA /* AlarmListFeature.swift */; };
+		244D50E12BC8B2D7003E5CBA /* AlarmForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50E02BC8B2D7003E5CBA /* AlarmForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,14 +77,19 @@
 		244D50BA2BC5D41D003E5CBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		244D50BB2BC5D429003E5CBA /* DontSnoozeWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DontSnoozeWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		244D50BC2BC61BC8003E5CBA /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
-		244D50C12BC786AD003E5CBA /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
-		244D50C72BC78800003E5CBA /* LiveKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveKey.swift; sourceTree = "<group>"; };
+		244D50C12BC786AD003E5CBA /* AudioPlayerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerClient.swift; sourceTree = "<group>"; };
+		244D50C72BC78800003E5CBA /* AudioPlayerLiveKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerLiveKey.swift; sourceTree = "<group>"; };
 		244D50C92BC78836003E5CBA /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
-		244D50CB2BC7884F003E5CBA /* TestKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKey.swift; sourceTree = "<group>"; };
-		244D50CE2BC78938003E5CBA /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
-		244D50D02BC78952003E5CBA /* LiveKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveKey.swift; sourceTree = "<group>"; };
-		244D50D22BC7898B003E5CBA /* TestKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKey.swift; sourceTree = "<group>"; };
+		244D50CB2BC7884F003E5CBA /* AudioPlayerTestKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerTestKey.swift; sourceTree = "<group>"; };
+		244D50CE2BC78938003E5CBA /* LocalNotificationsInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationsInterface.swift; sourceTree = "<group>"; };
+		244D50D02BC78952003E5CBA /* LocalNotificationsLiveKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationsLiveKey.swift; sourceTree = "<group>"; };
+		244D50D22BC7898B003E5CBA /* LocalNotificationsTestKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationsTestKey.swift; sourceTree = "<group>"; };
 		244D50D42BC78BAD003E5CBA /* god-monkey.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "god-monkey.wav"; sourceTree = "<group>"; };
+		244D50D62BC8A7C7003E5CBA /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
+		244D50D92BC8A9FC003E5CBA /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		244D50DB2BC8AF91003E5CBA /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		244D50DE2BC8B052003E5CBA /* AlarmListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListFeature.swift; sourceTree = "<group>"; };
+		244D50E02BC8B2D7003E5CBA /* AlarmForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +134,8 @@
 		244D50762BC4D17B003E5CBA /* DontSnooze */ = {
 			isa = PBXGroup;
 			children = (
+				244D50DD2BC8AF96003E5CBA /* Models */,
+				244D50D82BC8A97B003E5CBA /* DataManager */,
 				244D50CD2BC788F1003E5CBA /* LocalNotifications */,
 				244D50C02BC78680003E5CBA /* AudioPlayerClient */,
 				244D50BA2BC5D41D003E5CBA /* Info.plist */,
@@ -134,6 +146,9 @@
 				244D507B2BC4D17C003E5CBA /* Assets.xcassets */,
 				244D507D2BC4D17C003E5CBA /* Preview Content */,
 				244D50B72BC4D9FA003E5CBA /* Helper.swift */,
+				244D50D62BC8A7C7003E5CBA /* AppFeature.swift */,
+				244D50DE2BC8B052003E5CBA /* AlarmListFeature.swift */,
+				244D50E02BC8B2D7003E5CBA /* AlarmForm.swift */,
 			);
 			path = DontSnooze;
 			sourceTree = "<group>";
@@ -167,10 +182,10 @@
 		244D50C02BC78680003E5CBA /* AudioPlayerClient */ = {
 			isa = PBXGroup;
 			children = (
-				244D50C12BC786AD003E5CBA /* Client.swift */,
-				244D50C72BC78800003E5CBA /* LiveKey.swift */,
+				244D50C12BC786AD003E5CBA /* AudioPlayerClient.swift */,
+				244D50C72BC78800003E5CBA /* AudioPlayerLiveKey.swift */,
 				244D50C92BC78836003E5CBA /* Sounds.swift */,
-				244D50CB2BC7884F003E5CBA /* TestKey.swift */,
+				244D50CB2BC7884F003E5CBA /* AudioPlayerTestKey.swift */,
 			);
 			path = AudioPlayerClient;
 			sourceTree = "<group>";
@@ -178,11 +193,27 @@
 		244D50CD2BC788F1003E5CBA /* LocalNotifications */ = {
 			isa = PBXGroup;
 			children = (
-				244D50CE2BC78938003E5CBA /* Interface.swift */,
-				244D50D02BC78952003E5CBA /* LiveKey.swift */,
-				244D50D22BC7898B003E5CBA /* TestKey.swift */,
+				244D50CE2BC78938003E5CBA /* LocalNotificationsInterface.swift */,
+				244D50D02BC78952003E5CBA /* LocalNotificationsLiveKey.swift */,
+				244D50D22BC7898B003E5CBA /* LocalNotificationsTestKey.swift */,
 			);
 			path = LocalNotifications;
+			sourceTree = "<group>";
+		};
+		244D50D82BC8A97B003E5CBA /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				244D50D92BC8A9FC003E5CBA /* DataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		244D50DD2BC8AF96003E5CBA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				244D50DB2BC8AF91003E5CBA /* Alarm.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,17 +329,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				244D507A2BC4D17B003E5CBA /* ContentView.swift in Sources */,
-				244D50CF2BC78938003E5CBA /* Interface.swift in Sources */,
+				244D50CF2BC78938003E5CBA /* LocalNotificationsInterface.swift in Sources */,
+				244D50E12BC8B2D7003E5CBA /* AlarmForm.swift in Sources */,
+				244D50DC2BC8AF91003E5CBA /* Alarm.swift in Sources */,
+				244D50D72BC8A7C7003E5CBA /* AppFeature.swift in Sources */,
+				244D50DA2BC8A9FC003E5CBA /* DataManager.swift in Sources */,
 				244D50B52BC4D984003E5CBA /* NearbyInteractionManager.swift in Sources */,
-				244D50CC2BC7884F003E5CBA /* TestKey.swift in Sources */,
-				244D50C22BC786AD003E5CBA /* Client.swift in Sources */,
-				244D50D32BC7898B003E5CBA /* TestKey.swift in Sources */,
+				244D50DF2BC8B052003E5CBA /* AlarmListFeature.swift in Sources */,
+				244D50CC2BC7884F003E5CBA /* AudioPlayerTestKey.swift in Sources */,
+				244D50C22BC786AD003E5CBA /* AudioPlayerClient.swift in Sources */,
+				244D50D32BC7898B003E5CBA /* LocalNotificationsTestKey.swift in Sources */,
 				244D50CA2BC78836003E5CBA /* Sounds.swift in Sources */,
-				244D50C82BC78800003E5CBA /* LiveKey.swift in Sources */,
+				244D50C82BC78800003E5CBA /* AudioPlayerLiveKey.swift in Sources */,
 				244D50782BC4D17B003E5CBA /* DontSnoozeApp.swift in Sources */,
 				244D50B82BC4D9FA003E5CBA /* Helper.swift in Sources */,
 				244D50BD2BC61BC8003E5CBA /* BluetoothManager.swift in Sources */,
-				244D50D12BC78952003E5CBA /* LiveKey.swift in Sources */,
+				244D50D12BC78952003E5CBA /* LocalNotificationsLiveKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
