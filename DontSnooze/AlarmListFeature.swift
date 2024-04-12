@@ -33,10 +33,10 @@ struct AlarmsList {
   }
 
   enum Action {
-    case addSyncUpButtonTapped
-    case confirmAddSyncUpButtonTapped
+    case addAlarmButtonTapped
+    case confirmAddAlarmButtonTapped
     case destination(PresentationAction<Destination.Action>)
-    case dismissAddSyncUpButtonTapped
+    case dismissAddAlarmButtonTapped
     case onDelete(IndexSet)
   }
 
@@ -46,11 +46,12 @@ struct AlarmsList {
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
-      case .addSyncUpButtonTapped:
+      case .addAlarmButtonTapped:
         //state.destination = .add(AlarmForm.State(alarm: Alarm(id: self.uui))
+        state.destination = .add(AlarmForm.State(alarm: Alarm(id: self.uuid())))
         return .none
 
-      case .confirmAddSyncUpButtonTapped:
+      case .confirmAddAlarmButtonTapped:
         guard case let .some(.add(editState)) = state.destination
         else { return .none }
         var alarm = editState.alarm
@@ -78,7 +79,7 @@ struct AlarmsList {
       case .destination:
         return .none
 
-      case .dismissAddSyncUpButtonTapped:
+      case .dismissAddAlarmButtonTapped:
         state.destination = nil
         return .none
 
@@ -100,11 +101,12 @@ struct AlarmsListView: View {
         NavigationLink(
           //state: AppFeature.Path.State.detail(SyncUpDetail.State(syncUp: syncUp))
           state: AppFeature.Path.State.form(AlarmForm.State(alarm: alarm))
+          //destination: Text("Hey")
         ) {
           CardView(alarm: alarm)
           
         }
-        .listRowBackground(.blue)
+        .listRowBackground(Color.blue)
         //.listRowBackground(syncUp.theme.mainColor)
       }
       .onDelete { indexSet in
@@ -113,12 +115,12 @@ struct AlarmsListView: View {
     }
     .toolbar {
       Button {
-        store.send(.addSyncUpButtonTapped)
+        store.send(.addAlarmButtonTapped)
       } label: {
         Image(systemName: "plus")
       }
     }
-    .navigationTitle("Daily Sync-ups")
+    .navigationTitle("Alarm(s)")
     .alert($store.scope(state: \.destination?.alert, action: \.destination.alert))
     .sheet(item: $store.scope(state: \.destination?.add, action: \.destination.add)) { store in
       NavigationStack {
@@ -127,12 +129,12 @@ struct AlarmsListView: View {
           .toolbar {
             ToolbarItem(placement: .cancellationAction) {
               Button("Dismiss") {
-                self.store.send(.dismissAddSyncUpButtonTapped)
+                self.store.send(.dismissAddAlarmButtonTapped)
               }
             }
             ToolbarItem(placement: .confirmationAction) {
               Button("Add") {
-                self.store.send(.confirmAddSyncUpButtonTapped)
+                self.store.send(.confirmAddAlarmButtonTapped)
               }
             }
           }
@@ -173,7 +175,7 @@ struct CardView: View {
         //Label("\(self.syncUp.attendees.count)", systemImage: "person.3")
         Label("\(3)", systemImage: "person.3")
         Spacer()
-        Label(4, systemImage: "clock")
+        Label("4", systemImage: "clock")
         //          .labelStyle(.trailingIcon)
 //        Label(self.syncUp.duration.formatted(.units()), systemImage: "clock")
 //          .labelStyle(.trailingIcon)

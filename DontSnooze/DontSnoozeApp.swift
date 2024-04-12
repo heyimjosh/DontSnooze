@@ -95,9 +95,10 @@ struct DontSnoozeApp: App {
     AppFeature()
       ._printChanges()
   } withDependencies: {
-    if ProcessInfo.processInfo.environment["UITesting"] == "true" {
-      $0.dataManager = .mock()
-    }
+//    if ProcessInfo.processInfo.environment["UITesting"] == "true" {
+//      $0.dataManager = .mock()
+    $0.dataManager = .liveValue
+//    }
   }
 
   var body: some Scene {

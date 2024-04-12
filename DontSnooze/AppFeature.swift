@@ -14,12 +14,12 @@ struct AppFeature {
   @ObservableState
   struct State: Equatable {
     var path = StackState<Path.State>()
-    var alarmsList: AlarmsList.State()
+    var alarmsList = AlarmsList.State()
     //var syncUpsList = SyncUpsList.State()
   }
 
   enum Action {
-    case path(StackActionOf<Path>)
+    case path(StackAction<Path.State, Path.Action>)
     case alarmsList(AlarmsList.Action)
   }
 

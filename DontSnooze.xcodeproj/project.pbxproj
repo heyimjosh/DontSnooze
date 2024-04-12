@@ -7,24 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24325EB52BC8BFBB00397D92 /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 24325EB42BC8BFBB00397D92 /* SwiftUINavigation */; };
+		24325EB72BC8BFBB00397D92 /* SwiftUINavigationCore in Frameworks */ = {isa = PBXBuildFile; productRef = 24325EB62BC8BFBB00397D92 /* SwiftUINavigationCore */; };
 		244D50782BC4D17B003E5CBA /* DontSnoozeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50772BC4D17B003E5CBA /* DontSnoozeApp.swift */; };
 		244D507A2BC4D17B003E5CBA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50792BC4D17B003E5CBA /* ContentView.swift */; };
 		244D507C2BC4D17C003E5CBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244D507B2BC4D17C003E5CBA /* Assets.xcassets */; };
 		244D507F2BC4D17C003E5CBA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244D507E2BC4D17C003E5CBA /* Preview Assets.xcassets */; };
-		244D50A82BC4D728003E5CBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244D50A72BC4D728003E5CBA /* Assets.xcassets */; };
-		244D50AB2BC4D728003E5CBA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244D50AA2BC4D728003E5CBA /* Preview Assets.xcassets */; };
-		244D50AE2BC4D728003E5CBA /* DontSnoozeWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 244D50A12BC4D727003E5CBA /* DontSnoozeWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		244D50B22BC4D94D003E5CBA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50792BC4D17B003E5CBA /* ContentView.swift */; };
-		244D50B32BC4D94D003E5CBA /* DontSnoozeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50772BC4D17B003E5CBA /* DontSnoozeApp.swift */; };
 		244D50B52BC4D984003E5CBA /* NearbyInteractionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50B42BC4D984003E5CBA /* NearbyInteractionManager.swift */; };
-		244D50B62BC4D984003E5CBA /* NearbyInteractionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50B42BC4D984003E5CBA /* NearbyInteractionManager.swift */; };
 		244D50B82BC4D9FA003E5CBA /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50B72BC4D9FA003E5CBA /* Helper.swift */; };
-		244D50B92BC4D9FA003E5CBA /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50B72BC4D9FA003E5CBA /* Helper.swift */; };
 		244D50BD2BC61BC8003E5CBA /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50BC2BC61BC8003E5CBA /* BluetoothManager.swift */; };
-		244D50BE2BC61BC8003E5CBA /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50BC2BC61BC8003E5CBA /* BluetoothManager.swift */; };
 		244D50C22BC786AD003E5CBA /* AudioPlayerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50C12BC786AD003E5CBA /* AudioPlayerClient.swift */; };
 		244D50C42BC78785003E5CBA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 244D50C32BC78785003E5CBA /* ComposableArchitecture */; };
-		244D50C62BC78797003E5CBA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 244D50C52BC78797003E5CBA /* ComposableArchitecture */; };
 		244D50C82BC78800003E5CBA /* AudioPlayerLiveKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50C72BC78800003E5CBA /* AudioPlayerLiveKey.swift */; };
 		244D50CA2BC78836003E5CBA /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50C92BC78836003E5CBA /* Sounds.swift */; };
 		244D50CC2BC7884F003E5CBA /* AudioPlayerTestKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50CB2BC7884F003E5CBA /* AudioPlayerTestKey.swift */; };
@@ -39,16 +32,6 @@
 		244D50E12BC8B2D7003E5CBA /* AlarmForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D50E02BC8B2D7003E5CBA /* AlarmForm.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		244D50AC2BC4D728003E5CBA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 244D506C2BC4D17B003E5CBA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 244D50A02BC4D727003E5CBA;
-			remoteInfo = "DontSnoozeWatch Watch App";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		244D509A2BC4D20B003E5CBA /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -56,7 +39,6 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				244D50AE2BC4D728003E5CBA /* DontSnoozeWatch Watch App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,7 +51,6 @@
 		244D50792BC4D17B003E5CBA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		244D507B2BC4D17C003E5CBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		244D507E2BC4D17C003E5CBA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		244D50A12BC4D727003E5CBA /* DontSnoozeWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DontSnoozeWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		244D50A72BC4D728003E5CBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		244D50AA2BC4D728003E5CBA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		244D50B42BC4D984003E5CBA /* NearbyInteractionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyInteractionManager.swift; sourceTree = "<group>"; };
@@ -97,15 +78,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24325EB52BC8BFBB00397D92 /* SwiftUINavigation in Frameworks */,
+				24325EB72BC8BFBB00397D92 /* SwiftUINavigationCore in Frameworks */,
 				244D50C42BC78785003E5CBA /* ComposableArchitecture in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		244D509E2BC4D727003E5CBA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				244D50C62BC78797003E5CBA /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				244D50742BC4D17B003E5CBA /* DontSnooze.app */,
-				244D50A12BC4D727003E5CBA /* DontSnoozeWatch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,34 +205,15 @@
 			buildRules = (
 			);
 			dependencies = (
-				244D50AD2BC4D728003E5CBA /* PBXTargetDependency */,
 			);
 			name = DontSnooze;
 			packageProductDependencies = (
 				244D50C32BC78785003E5CBA /* ComposableArchitecture */,
+				24325EB42BC8BFBB00397D92 /* SwiftUINavigation */,
+				24325EB62BC8BFBB00397D92 /* SwiftUINavigationCore */,
 			);
 			productName = DontSnooze;
 			productReference = 244D50742BC4D17B003E5CBA /* DontSnooze.app */;
-			productType = "com.apple.product-type.application";
-		};
-		244D50A02BC4D727003E5CBA /* DontSnoozeWatch Watch App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 244D50B12BC4D728003E5CBA /* Build configuration list for PBXNativeTarget "DontSnoozeWatch Watch App" */;
-			buildPhases = (
-				244D509D2BC4D727003E5CBA /* Sources */,
-				244D509E2BC4D727003E5CBA /* Frameworks */,
-				244D509F2BC4D727003E5CBA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "DontSnoozeWatch Watch App";
-			packageProductDependencies = (
-				244D50C52BC78797003E5CBA /* ComposableArchitecture */,
-			);
-			productName = "DontSnoozeWatch Watch App";
-			productReference = 244D50A12BC4D727003E5CBA /* DontSnoozeWatch Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -274,9 +229,6 @@
 					244D50732BC4D17B003E5CBA = {
 						CreatedOnToolsVersion = 15.1;
 					};
-					244D50A02BC4D727003E5CBA = {
-						CreatedOnToolsVersion = 15.1;
-					};
 				};
 			};
 			buildConfigurationList = 244D506F2BC4D17B003E5CBA /* Build configuration list for PBXProject "DontSnooze" */;
@@ -290,13 +242,13 @@
 			mainGroup = 244D506B2BC4D17B003E5CBA;
 			packageReferences = (
 				244D50BF2BC78676003E5CBA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				24325EB32BC8BFBB00397D92 /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
 			);
 			productRefGroup = 244D50752BC4D17B003E5CBA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				244D50732BC4D17B003E5CBA /* DontSnooze */,
-				244D50A02BC4D727003E5CBA /* DontSnoozeWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -309,15 +261,6 @@
 				244D507F2BC4D17C003E5CBA /* Preview Assets.xcassets in Resources */,
 				244D507C2BC4D17C003E5CBA /* Assets.xcassets in Resources */,
 				244D50D52BC78BAD003E5CBA /* god-monkey.wav in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		244D509F2BC4D727003E5CBA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				244D50AB2BC4D728003E5CBA /* Preview Assets.xcassets in Resources */,
-				244D50A82BC4D728003E5CBA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,27 +291,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		244D509D2BC4D727003E5CBA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				244D50B32BC4D94D003E5CBA /* DontSnoozeApp.swift in Sources */,
-				244D50B62BC4D984003E5CBA /* NearbyInteractionManager.swift in Sources */,
-				244D50B22BC4D94D003E5CBA /* ContentView.swift in Sources */,
-				244D50B92BC4D9FA003E5CBA /* Helper.swift in Sources */,
-				244D50BE2BC61BC8003E5CBA /* BluetoothManager.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		244D50AD2BC4D728003E5CBA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 244D50A02BC4D727003E5CBA /* DontSnoozeWatch Watch App */;
-			targetProxy = 244D50AC2BC4D728003E5CBA /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		244D50802BC4D17C003E5CBA /* Debug */ = {
@@ -552,68 +475,6 @@
 			};
 			name = Release;
 		};
-		244D50AF2BC4D728003E5CBA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DontSnoozeWatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 3ZSY9E5XKM;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "DontSnoozeWatch-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = DontSnoozeWatch;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.joshdavis.DontSnooze;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.joshdavis.DontSnooze.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.2;
-			};
-			name = Debug;
-		};
-		244D50B02BC4D728003E5CBA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DontSnoozeWatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 3ZSY9E5XKM;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "DontSnoozeWatch-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = DontSnoozeWatch;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.joshdavis.DontSnooze;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.joshdavis.DontSnooze.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.2;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -635,18 +496,17 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		244D50B12BC4D728003E5CBA /* Build configuration list for PBXNativeTarget "DontSnoozeWatch Watch App" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				244D50AF2BC4D728003E5CBA /* Debug */,
-				244D50B02BC4D728003E5CBA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		24325EB32BC8BFBB00397D92 /* XCRemoteSwiftPackageReference "swiftui-navigation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swiftui-navigation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
 		244D50BF2BC78676003E5CBA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -658,12 +518,17 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		244D50C32BC78785003E5CBA /* ComposableArchitecture */ = {
+		24325EB42BC8BFBB00397D92 /* SwiftUINavigation */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 244D50BF2BC78676003E5CBA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
-			productName = ComposableArchitecture;
+			package = 24325EB32BC8BFBB00397D92 /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
+			productName = SwiftUINavigation;
 		};
-		244D50C52BC78797003E5CBA /* ComposableArchitecture */ = {
+		24325EB62BC8BFBB00397D92 /* SwiftUINavigationCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24325EB32BC8BFBB00397D92 /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
+			productName = SwiftUINavigationCore;
+		};
+		244D50C32BC78785003E5CBA /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 244D50BF2BC78676003E5CBA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
