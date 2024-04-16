@@ -7,21 +7,21 @@ struct AlarmsList {
   enum Destination {
     case add(AlarmForm)
     case alert(AlertState<Alert>)
-
+    
     @CasePathable
     enum Alert {
       case confirmLoadMockData
     }
   }
-
+  
   @ObservableState
   struct State: Equatable {
     @Presents var destination: Destination.State?
     var alarms: IdentifiedArrayOf<Alarm> = []
-
+    
     init(destination: Destination.State? = nil) {
       self.destination = destination
-
+      
       do {
         @Dependency(\.dataManager.load) var load
         self.alarms = try JSONDecoder().decode(IdentifiedArray.self, from: load(.alarms))
@@ -33,57 +33,63 @@ struct AlarmsList {
       self.alarms = [.mock, .mock2]
     }
   }
-
+  
   enum Action {
     case addAlarmButtonTapped
     case confirmAddAlarmButtonTapped
     case destination(PresentationAction<Destination.Action>)
     case dismissAddAlarmButtonTapped
     case onDelete(IndexSet)
+    case toggleChanged(UUID, Bool)
   }
-
+  
   @Dependency(\.continuousClock) var clock
   @Dependency(\.uuid) var uuid
-
+  
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
       case .addAlarmButtonTapped:
         state.destination = .add(AlarmForm.State(alarm: Alarm(id: self.uuid())))
         return .none
-
+        
       case .confirmAddAlarmButtonTapped:
         guard case let .some(.add(editState)) = state.destination
         else { return .none }
         var alarm = editState.alarm
-//        syncUp.attendees.removeAll { attendee in
-//          attendee.name.allSatisfy(\.isWhitespace)
-//        }
-//        if syncUp.attendees.isEmpty {
-//          syncUp.attendees.append(
-//            editState.syncUp.attendees.first
-//              ?? Attendee(id: Attendee.ID(self.uuid()))
-//          )
-//        }
+        //        syncUp.attendees.removeAll { attendee in
+        //          attendee.name.allSatisfy(\.isWhitespace)
+        //        }
+        //        if syncUp.attendees.isEmpty {
+        //          syncUp.attendees.append(
+        //            editState.syncUp.attendees.first
+        //              ?? Attendee(id: Attendee.ID(self.uuid()))
+        //          )
+        //        }
         state.alarms.append(alarm)
         state.destination = nil
         return .none
-
+        
       case .destination(.presented(.alert(.confirmLoadMockData))):
         state.alarms = [
-//          .mock,
-//          .designMock,
-//          .engineeringMock,
+          //          .mock,
+          //          .designMock,
+          //          .engineeringMock,
         ]
         return .none
-
+        
       case .destination:
         return .none
-
+        
       case .dismissAddAlarmButtonTapped:
         state.destination = nil
         return .none
-
+        
+      case .toggleChanged(let id, let newValue):
+        state.alarms[id: id]?.isEnabled = newValue
+        print("newAlarm isEnabled: \(state.alarms[id: id]?.isEnabled)")
+        return .none
+        
       case let .onDelete(indexSet):
         state.alarms.remove(atOffsets: indexSet)
         return .none
@@ -95,19 +101,16 @@ struct AlarmsList {
 
 struct AlarmsListView: View {
   @Bindable var store: StoreOf<AlarmsList>
-
+  
   var body: some View {
     List {
       ForEach(store.alarms) { alarm in
         NavigationLink(
           state: AppFeature.Path.State.form(AlarmForm.State(alarm: alarm))
         ) {
-          CardView(alarm: alarm)
-            .overlay {
-              //Toggle(isOn: $store.alarms[0].isEnabled)
-              
-              
-            }
+          CardView(alarm: alarm) { isEnabled in
+            store.send(.toggleChanged(alarm.id, isEnabled))
+          }
         }
         .listRowBackground(Color.white)
         //.listRowBackground(syncUp.theme.mainColor)
@@ -168,13 +171,14 @@ extension AlertState where Action == AlarmsList.Destination.Alert {
 
 struct CardView: View {
   let alarm: Alarm
+  var onToggle: (Bool) -> Void
   
   func formatDate(_ date: Date) -> String {
     let formatter = DateFormatter()
     formatter.dateFormat = "h:mm a"
     return formatter.string(from: date)
   }
-
+  
   var body: some View {
     HStack(spacing: 0) {
       VStack(alignment: .leading) {
@@ -183,7 +187,7 @@ struct CardView: View {
         Text(alarm.title)
           .font(.subheadline)
       }
-      //Toggle("", isOn: alarm.isEnabled)
+      CustomToggle(currentToggleValue: alarm.isEnabled, onToggle: onToggle)
     }
     .padding()
     //.foregroundColor(self.syncUp.theme.accentColor)
@@ -204,20 +208,34 @@ extension LabelStyle where Self == TrailingIconLabelStyle {
   static var trailingIcon: Self { Self() }
 }
 
-#Preview {
-  AlarmsListView(
-    store: Store(initialState: AlarmsList.State()) {
-      AlarmsList()
-    } withDependencies: {
-      $0.dataManager.load = { @Sendable _ in
-        try JSONEncoder().encode([
-          Alarm.mock,
-          .mock2,
-        ])
+struct CustomToggle: View {
+  let currentToggleValue: Bool
+  var onToggle: (Bool) -> Void
+  
+  var body: some View {
+    Toggle("", isOn: Binding(
+      get: { self.currentToggleValue },
+      set: { newValue in
+        self.onToggle(newValue)
       }
-    }
-  )
+    ))
+  }
 }
+
+//#Preview {
+//  AlarmsListView(
+//    store: Store(initialState: AlarmsList.State()) {
+//      AlarmsList()
+//    } withDependencies: {
+//      $0.dataManager.load = { @Sendable _ in
+//        try JSONEncoder().encode([
+//          Alarm.mock,
+//          .mock2,
+//        ])
+//      }
+//    }
+//  )
+//}
 
 //#Preview("Load data failure") {
 //  SyncUpsListView(
