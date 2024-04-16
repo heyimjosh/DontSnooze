@@ -102,9 +102,12 @@ struct AlarmsListView: View {
         NavigationLink(
           state: AppFeature.Path.State.form(AlarmForm.State(alarm: alarm))
         ) {
-          CardView(alarm: Store(initialState: AlarmForm.State(alarm: alarm)) {
-            AlarmForm()
-          })
+          CardView(alarm: alarm)
+            .overlay {
+              //Toggle(isOn: $store.alarms[0].isEnabled)
+              
+              
+            }
         }
         .listRowBackground(Color.white)
         //.listRowBackground(syncUp.theme.mainColor)
@@ -164,7 +167,7 @@ extension AlertState where Action == AlarmsList.Destination.Alert {
 }
 
 struct CardView: View {
-  @Bindable var store: StoreOf<AlarmForm>
+  let alarm: Alarm
   
   func formatDate(_ date: Date) -> String {
     let formatter = DateFormatter()
@@ -175,12 +178,12 @@ struct CardView: View {
   var body: some View {
     HStack(spacing: 0) {
       VStack(alignment: .leading) {
-        Text(formatDate(store.alarm.time))
+        Text(formatDate(alarm.time))
           .font(.title)
-        Text(store.alarm.title)
+        Text(alarm.title)
           .font(.subheadline)
       }
-      Toggle("", isOn: $store.alarm.isEnabled)
+      //Toggle("", isOn: alarm.isEnabled)
     }
     .padding()
     //.foregroundColor(self.syncUp.theme.accentColor)
