@@ -3,7 +3,8 @@ import Foundation
 struct Alarm: Equatable, Identifiable, Hashable, Codable {
   var id: UUID
   var title: String = "Title"
-  var time: Date = Date.now
+  //var time: Date = Date.now
+  var time: [String] = ["12", "00", "AM"]
   var repeatDays: [Weekday] = []
   var isEnabled: Bool = true
   var soundName: String = "god-monkey"

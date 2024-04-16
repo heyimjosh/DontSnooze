@@ -182,7 +182,7 @@ struct CardView: View {
   var body: some View {
     HStack(spacing: 0) {
       VStack(alignment: .leading) {
-        Text(formatDate(alarm.time))
+        Text("\(alarm.time[0]):\(alarm.time[1]) \(alarm.time[2])")
           .font(.title)
         Text(alarm.title)
           .font(.subheadline)

@@ -27,6 +27,7 @@ struct AlarmForm {
   enum Action: BindableAction, Equatable, Sendable {
     //case addAttendeeButtonTapped
     case binding(BindingAction<State>)
+    case alarmTimeChanged([String])
     //case deleteAttendees(atOffsets: IndexSet)
   }
 
@@ -43,6 +44,10 @@ struct AlarmForm {
 //        return .none
 
       case .binding:
+        return .none
+        
+      case .alarmTimeChanged(let newValue):
+        state.alarm.time = newValue
         return .none
 
 //      case let .deleteAttendees(atOffsets: indices):
@@ -65,38 +70,42 @@ struct AlarmFormView: View {
   @FocusState var focus: AlarmForm.State.Field?
 
   var body: some View {
-    Form {
-      Section {
-        TextField("Title", text: $store.alarm.title)
-          .focused($focus, equals: .title)
-        HStack {
-//          Slider(value: $store.syncUp.duration.minutes, in: 5...30, step: 1) {
-//            Text("Length")
-//          }
-          Spacer()
-          //Text(store.syncUp.duration.formatted(.units()))
+    VStack {
+      MultiPickerView(selection: $store.alarm.time.sending(\.alarmTimeChanged))
+      Form {
+        
+        Section {
+          TextField("Title", text: $store.alarm.title)
+            .focused($focus, equals: .title)
+          HStack {
+            //          Slider(value: $store.syncUp.duration.minutes, in: 5...30, step: 1) {
+            //            Text("Length")
+            //          }
+            Spacer()
+            //Text(store.syncUp.duration.formatted(.units()))
+          }
+          //ThemePicker(selection: $store.syncUp.theme)
+        } header: {
+          Text("Sync-up Info")
         }
-        //ThemePicker(selection: $store.syncUp.theme)
-      } header: {
-        Text("Sync-up Info")
+        Section {
+          //        ForEach($store.syncUp.attendees) { $attendee in
+          //          TextField("Name", text: $attendee.name)
+          //            .focused($focus, equals: .attendee(attendee.id))
+          //        }
+          //        .onDelete { indices in
+          //          store.send(.deleteAttendees(atOffsets: indices))
+          //        }
+          
+          //        Button("New attendee") {
+          //          store.send(.addAttendeeButtonTapped)
+          //        }
+        } header: {
+          Text("Alarms")
+        }
       }
-      Section {
-//        ForEach($store.syncUp.attendees) { $attendee in
-//          TextField("Name", text: $attendee.name)
-//            .focused($focus, equals: .attendee(attendee.id))
-//        }
-//        .onDelete { indices in
-//          store.send(.deleteAttendees(atOffsets: indices))
-//        }
-
-//        Button("New attendee") {
-//          store.send(.addAttendeeButtonTapped)
-//        }
-      } header: {
-        Text("Alarms")
-      }
+      .bind($store.focus, to: $focus)
     }
-    .bind($store.focus, to: $focus)
   }
 }
 
@@ -136,3 +145,37 @@ extension Duration {
 //    )
 //  }
 //}
+
+public struct MultiPickerView: View  {
+  
+  @Binding var selection: [String]
+  
+  public init(selection: Binding<[String]>) {
+    self._selection = selection
+  }
+  
+  var timeData: [(String, [String])] = [
+    ("Hour", Array(1...12).map { String(format: "%02d", $0) }),
+    ("Minute", Array(0...59).map { String(format: "%02d", $0) }),
+    ("Period", ["AM", "PM"])
+  ]
+  
+  public var body: some View {
+    GeometryReader { geometry in
+      HStack(spacing: 0) {
+        ForEach(0..<self.timeData.count, id: \.self) { column in
+          Picker(self.timeData[column].0, selection: self.$selection[column]) {
+            ForEach(0..<self.timeData[column].1.count, id: \.self) { row in
+              Text(verbatim:self.timeData[column].1[row])
+                .tag(self.timeData[column].1[row])
+                .foregroundColor(.white)
+            }
+          }
+          .pickerStyle(WheelPickerStyle())
+          .frame(width: geometry.size.width / 3, height: 100)
+          .clipped()
+        }
+      }
+    }
+  }
+}
